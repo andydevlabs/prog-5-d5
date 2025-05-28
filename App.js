@@ -26,7 +26,10 @@ const flavors = [
     },
 ];
 
-function pay(amount) {
+function pay() {
+    const input = prompt("Please, pay for your coffee first: ");
+    const amount = parseInt(input, 10);
+
     if (isNaN(amount)) {
         console.log("Please enter a number for your payment");
         return false;
@@ -71,4 +74,4 @@ function pay(amount) {
     }
 }
 
-pay("zge");
+pay();
