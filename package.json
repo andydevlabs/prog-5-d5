@@ -1,0 +1,23 @@
+{
+  "name": "prog-5-d5",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Coffee machine business logic",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andydevlabs/prog-5-d5.git"
+  },
+  "author": "andydevlabs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andydevlabs/prog-5-d5/issues"
+  },
+  "homepage": "https://github.com/andydevlabs/prog-5-d5#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

@@ -1,3 +1,6 @@
+import promptSync from "prompt-sync";
+const prompt = promptSync({ sigint: true })
+; 
 let isPaid = false;
 let isAvailable = true;
 let price = 10000;
@@ -32,50 +35,24 @@ function pay(amount) {
         console.log("Choose your flavor : ");
         test.map((flavor) => {
             console.log(`- ${flavor.name.toUpperCase()}`);
-            
-            switch (flavor.name.toLowerCase()) {
-                case "latte":
-                    if (flavor.isAvailable) {
-                        console.log("Here's your coffee");
-                    } else {
-                        console.log(
-                            "We're sorry but that flavor is unavailable for the moment"
-                        );
-                    }
-                    break;
-                case "espresso":
-                    if (flavor.isAvailable) {
-                        console.log("Here's your coffee");
-                    } else {
-                        console.log(
-                            "We're sorry but that flavor is unavailable for the moment"
-                        );
-                    }
-                    break;
-                case "americano":
-                    if (flavor.isAvailable) {
-                        console.log("Here's your coffee");
-                    } else {
-                        console.log(
-                            "We're sorry but that flavor is unavailable for the moment"
-                        );
-                    }
-                    break;
-                case "mocha":
-                    if (flavor.isAvailable) {
-                        console.log("Here's your coffee");
-                    } else {
-                        console.log(
-                            "We're sorry but that flavor is unavailable for the moment"
-                        );
-                    }
-                    break;
-                default:
-                    console.log("Please, make sure you enter the right choise");
-            }
         });
+        const ask = prompt("> ");
+        const selectedFlavor = test.find(
+            (flavor) => flavor.name.toLowerCase() === ask.toLowerCase()
+        );
 
-
+        if (selectedFlavor) {
+            if (selectedFlavor.isAvailable) {
+                console.log("Here's your coffee");
+            } else {
+                console.log(
+                    "We're sorry but that flavor is unavailable for the moment"
+                );
+            }
+        } else {
+            console.log("Please, make sure you enter the right choice");
+        }
+        
     }
 
     if (amount < price) {
