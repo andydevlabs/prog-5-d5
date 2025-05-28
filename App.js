@@ -2,11 +2,9 @@ import promptSync from "prompt-sync";
 const prompt = promptSync({ sigint: true })
 ; 
 let isPaid = false;
-let isAvailable = true;
 let price = 10000;
-const flavors = ["latte", "espresso", "americano", "mocha", "americano"];
 
-const test = [
+const flavors = [
     {
         name: "latte",
         isAvailable: true,
@@ -33,11 +31,11 @@ function pay(amount) {
     if (amount === price) {
         isPaid = true;
         console.log("Choose your flavor : ");
-        test.map((flavor) => {
+        flavors.map((flavor) => {
             console.log(`- ${flavor.name.toUpperCase()}`);
         });
         const ask = prompt("> ");
-        const selectedFlavor = test.find(
+        const selectedFlavor = flavors.find(
             (flavor) => flavor.name.toLowerCase() === ask.toLowerCase()
         );
 
